@@ -1,0 +1,6 @@
+<ul>
+{% for item in items %}
+  <li>{{item}}- <a href="{% url 'id_message' id=item.Userid %}">Go specifically to this message</a></li>
+  {% endfor %}
+</ul>
+<a href="{% url 'main' %}">to main page</a>
