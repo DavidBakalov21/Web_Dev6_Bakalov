@@ -20,6 +20,7 @@ from hw6 import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("hw6/", include("additional.urls")),
+    path("hw8/", include("hw8.urls")),
     path("",views.sendInfo, name="main"),
     re_path('.*', views.nothing),
 ]

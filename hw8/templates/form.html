@@ -1,0 +1,15 @@
+<form action="addUser/" method="post">
+    <label for="realname">first and last name: </label>
+    <input id="realname" type="text" name="realname" >
+  <label for="age">Your age: </label>
+    <input id="age" type="text" name="age">
+  <label for="email">email: </label>
+    <input id="email" type="email" name="email">
+  <label for="nickname">nickname: </label>
+    <input id="nickname" type="text" name="nickname">
+
+     <label for="isAdmin">I am admin</label>
+    <input id="isAdmin" type="checkbox" name="isAdmin" value="True">
+    <input type="submit" value="submit">
+</form>
+<a href="{% url 'all_users' %}">to all users page</a>

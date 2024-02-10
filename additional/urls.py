@@ -9,6 +9,9 @@ urlpatterns = [
     path("image", views.sendImg),
 
     #hw7
-    path('set_cookie/', views.set_cookie),
-    path('get_cookie/', views.get_cookie),
+    path('set_cookie/<str:title>/<str:value>', views.set_cookie),
+    path('get_cookie/<str:title>/', views.get_cookie),
+    path('set_header/<str:header_name>/<str:header_value>', views.set_Header),
+    path('get_header/<str:header_name>/', views.get_Header),
+
     ]

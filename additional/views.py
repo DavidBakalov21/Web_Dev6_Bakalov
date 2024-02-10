@@ -3,7 +3,7 @@ from django.http import HttpResponse, JsonResponse
 import json
 from django.views.decorators.csrf import csrf_exempt
 from additional.data import messages
-
+from additional.helpers import set_cookie_helper, get_cookie_helper, set_header_helper, get_Header_helper
 # Create your views here.
 
 def sendAll(request):
@@ -37,13 +37,16 @@ def Delete(request, id):
     return HttpResponse("Message is successfully deleted if it was present")
 
 #hw7
-def set_cookie(request):
-    response=HttpResponse("Cookie")
-    #response.set_cookie("my_cookie", "Hello from server")
-    response.set_cookie("my_cookie", "Hello from server", httponly=True)
-    return response
-def get_cookie(request):
-    my_cookie_value=request.COOKIES.get("my_cookie", "Cookie not set")
-    return HttpResponse(f"value of my_cookie:{my_cookie_value}")
+def set_cookie(request, title, value):
+    return set_cookie_helper.set_cookieHelper(request, title, value)
+def get_cookie(request, title):
+    return get_cookie_helper.get_cookieHelper(request, title)
+
+def set_Header(request, header_name, header_value):
+    return set_header_helper.set_HeaderHelper(request, header_name, header_value)
+
+def get_Header(request, header_name):
+    return get_Header_helper.get_HeaderHelper(request, header_name)
+
 
 

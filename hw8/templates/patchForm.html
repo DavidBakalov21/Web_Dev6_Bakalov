@@ -1,0 +1,7 @@
+<form action="PatchUser/" method="post">
+  <label for="nickname">nickname: </label>
+    <input id="nickname" type="text" name="nickname">
+    <input type="submit" value="submit">
+    <input type="hidden" name="firstId" value="{{id}}">
+</form>
+<a href="{% url 'all_users' %}">to all users page</a>

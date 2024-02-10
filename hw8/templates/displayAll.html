@@ -1,0 +1,35 @@
+<style>
+    .item {
+        background-color: #f0f0f0;
+        margin-top: 2%;
+        border: 1px solid black;
+        padding:1%
+    }
+</style>
+<ul>
+{% for item in items %}
+  <li class="item">{{item.realname}} - {{item.nickname}} <button class="deleteButton" itemId="{{item.id}}">Delete</button>
+    <a href="{% url 'profile' id=item.id %}">Go to this user</a> <p>-</p> <a href="{% url 'update' id=item.id %}">Update whole user</a>
+  <p>-</p>
+    <a href="{% url 'Patch' id=item.id %}">Patch user nickname</a>
+  </li>
+  {% endfor %}
+</ul>
+<a href="{% url 'main' %}">to main page</a>
+<br>
+<a href="{% url 'add_user' %}">add user</a>
+<br>
+<a href="{% url 'Infohw8' %}">see Info about hw8</a>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+   document.querySelectorAll('.deleteButton').forEach(button => {
+        button.onclick = () => {
+            fetch('delete/', {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 'id': button.getAttribute('itemId') }),
+            }).then(() =>window.location.reload());
+        };
+    });
+});
+</script>

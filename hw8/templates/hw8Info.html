@@ -1,0 +1,36 @@
+<h2>Because most of the application has graphical interface(NO NEED TO USE POSTMAN) documentation and descriptions wil be simple</h2>
+<h3> { "Path": "hw8/viewAll",
+          "method": "GET",
+          "description": "displays the list of all users", }</h3>
+<h3> { "Path": "hw8/addForm",
+          "method": "GET",
+          "description": "Press "add user" on the viewAll page, it calls form to add user, there is no specific input tricks to know", }</h3>
+<h3> { "Path": "hw8/addUser/",
+          "method": "POST",
+          "description": "adds user based on input from the form, please don't access it mannuly", }</h3>
+<h3> { "Path": "hw8/user/:id/",
+          "method": "GET",
+          "description": " Press "Go to this user" on the viewAll page, view user profile,  like other methods it can be accessed graphically( can be accessed from the page with users), so there is no need to input long ids ", }</h3>
+<h3> { "Path": "hw8/delete/",
+          "method": "DELETE",
+          "description": "you can press delete button on the page with all users to delete them", }</h3>
+
+<h3> { "Path": "hw8/updateForm/str:id",
+          "method": "GET",
+          "description": "press "Update whole user" to call form to modify the entire user,so there is no need to input long ids" }</h3>
+
+<h3> { "Path": "hw8/updateForm/updateUser/",
+          "method": "POST",
+          "description": "update user from update form" }</h3>
+
+<h3> { "Path": "hw8/PatchForm/str:id",
+          "method": "GET",
+          "description": "press "Patch user nickname" to call form to modify the user nickname,so there is no need to input long ids " }</h3>
+<h3> { "Path": "hw8/PatchForm/PatchUser/",
+          "method": "GET",
+          "description": "update user nickname from patch form" }</h3>
+
+<a href="{% url 'all_users' %}">to all users page</a>
+
+
+
