@@ -32,19 +32,19 @@ info = {
       },
       #hw7
         {
-          "Path": "hw6/set_cookie/<str:title>/<str:value>",
+          "Path": "hw6/set_cookie",
           "method": "GET",
-          "description": "sets cookie example (http://127.0.0.1:8000/hw6/set_cookie/cookie/value)",
+          "description": "sets cookie example (http://127.0.0.1:8000/hw6/set_cookie?cookie=favorite&val=value)",
         },
         {
           "Path": "hw6/get_cookie/<str:title>/",
           "method": "GET",
-          "description": "gets cookie example (http://127.0.0.1:8000/hw6/get_cookie/cookie/)",
+          "description": "gets cookie example (http://127.0.0.1:8000/hw6/get_cookie/favorite/)",
         },
         {
-          "Path": "hw6/set_header/<str:header_name>/<str:header_value>",
+          "Path": "hw6/set_header",
           "method": "GET",
-          "description": "sets header example (http://127.0.0.1:8000/hw6/set_header/header/val)",
+          "description": "sets header example (http://127.0.0.1:8000/hw6/set_header?header=favorite&value=value)",
          },
         {
           "Path": "hw6/get_header/<str:header_name>/",

@@ -37,12 +37,16 @@ def Delete(request, id):
     return HttpResponse("Message is successfully deleted if it was present")
 
 #hw7
-def set_cookie(request, title, value):
+def set_cookie(request):
+    title = request.GET.get('cookie')
+    value = request.GET.get('val')
     return set_cookie_helper.set_cookieHelper(request, title, value)
 def get_cookie(request, title):
     return get_cookie_helper.get_cookieHelper(request, title)
 
-def set_Header(request, header_name, header_value):
+def set_Header(request):
+    header_name = request.GET.get('header')
+    header_value = request.GET.get('value')
     return set_header_helper.set_HeaderHelper(request, header_name, header_value)
 
 def get_Header(request, header_name):
